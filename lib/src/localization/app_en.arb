@@ -1,0 +1,6 @@
+{
+  "appTitle": "simple_flutter_template",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
