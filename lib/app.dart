@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'config/palette.dart';
 import 'domain/settings/settings_controller.dart';
 import 'pages/home/home.dart';
 import 'pages/sample_items/sample_items.dart';
@@ -32,7 +33,20 @@ class MyApp extends StatelessWidget {
           // Define a light and dark color theme. Then, read the user's
           // preferred ThemeMode (light, dark, or system default) from the
           // SettingsController to display the correct theme.
-          theme: ThemeData(),
+          // theme: ThemeData(),
+          theme: ThemeData(
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+            canvasColor: Palette.lightGrey,
+            primaryColor: Palette.darkerGrey,
+            buttonTheme: const ButtonThemeData(
+              buttonColor: Palette.darkerGrey,
+              textTheme: ButtonTextTheme.primary,
+            ),
+            colorScheme: const ColorScheme.light(
+              primary: Colors.black, //flat button text color
+              secondary: Palette.lightBlue,
+            ),
+          ),
           darkTheme: ThemeData.dark(),
           themeMode: settingsController.themeMode,
 
